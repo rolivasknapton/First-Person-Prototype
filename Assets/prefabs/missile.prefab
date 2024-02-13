@@ -160,3 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb81d3e87c2f8594e8d30c20d4964a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1557153973448774036, guid: b6050ddf83982d94f8d715b4b8a417ca, type: 3}
+  cameraShake: {fileID: 0}
+  shakeIntensity: 5
+  shakeTime: 1

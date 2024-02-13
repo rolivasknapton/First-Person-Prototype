@@ -7,6 +7,7 @@ public class explosionScript : MonoBehaviour
 { 
     private CharacterController characterController;
 
+    public GameObject player;
     [Header("Camera Shake Parameters")]
     [SerializeField] private CameraShakeController cameraShake;
     [SerializeField] private float shakeIntensity = 5;
