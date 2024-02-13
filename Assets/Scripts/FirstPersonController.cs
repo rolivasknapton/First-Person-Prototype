@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class FirstPersonController : MonoBehaviour
 {
     public float speed = 5f;
     public float sensitivity = 2f;
+    [SerializeField]
+    private float gravity = 1;
 
     private CharacterController characterController;
+    public CinemachineVirtualCamera virtualCamera;
+
     private float verticalRotation = 0f;
+
+
+
+    public BoxCollider missilespawnarea;
+    
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        missilespawnarea = GameObject.Find("missileSpawner").GetComponent<BoxCollider>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -26,7 +37,7 @@ public class FirstPersonController : MonoBehaviour
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
 
         transform.Rotate(Vector3.up * mouseX);
-        Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+       virtualCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
         // Movement
         float horizontalMovement = Input.GetAxis("Horizontal");
@@ -40,6 +51,8 @@ public class FirstPersonController : MonoBehaviour
         {
             Click();
         }
+
+        ApplyGravity();
     }
 
     void Click()
@@ -54,6 +67,14 @@ public class FirstPersonController : MonoBehaviour
 
             // Perform actions based on the clicked object, for example:
             // hitObject.SendMessage("OnClick", SendMessageOptions.DontRequireReceiver);
+        }
+        MissileManagerScript.instance.SpawnMissiles(missilespawnarea);
+    }
+    void ApplyGravity()
+    {
+        if (!characterController.isGrounded && characterController.velocity.y > -20f)
+        {
+            characterController.Move(Vector3.down * gravity * Time.deltaTime);
         }
     }
 }   
