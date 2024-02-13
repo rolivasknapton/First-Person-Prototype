@@ -16,7 +16,7 @@ public class MissileManagerScript : MonoBehaviour
     public void SpawnMissiles(BoxCollider spawnableAreaCollider)
     {
         Vector3 spawnPosition = GetRandomSpawnPosition(spawnableAreaCollider);
-        Debug.Log(spawnPosition);
+        //Debug.Log(spawnPosition);
         GameObject spawnedMissle = Instantiate(fallingObject, spawnPosition, Quaternion.identity);
     }
    public Vector3 GetRandomSpawnPosition(BoxCollider spawnableAreaCollider)
