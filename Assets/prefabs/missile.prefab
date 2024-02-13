@@ -162,7 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cameraShake: {fileID: 0}
-  maxShakeIntensity: 20
-  minShakeIntensity: 0
   shakeIntensity: 5
   shakeTime: 1
+  maxShakeIntensity: 20
+  minShakeIntensity: 0
+  explosion: {fileID: 7354695869903840038, guid: 8d03efb8852445040b36a90d33f0f5c6, type: 3}

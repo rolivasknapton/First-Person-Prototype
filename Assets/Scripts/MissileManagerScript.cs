@@ -6,6 +6,7 @@ public class MissileManagerScript : MonoBehaviour
 {
     public static MissileManagerScript instance;
     public GameObject fallingObject;
+    
     private void Awake()
     {
         if(instance == null)

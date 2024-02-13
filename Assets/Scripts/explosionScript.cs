@@ -15,6 +15,9 @@ public class explosionScript : MonoBehaviour
     [SerializeField] private float maxShakeIntensity = 20f; // Maximum shake intensity
     [SerializeField] private float minShakeIntensity = 1f; // Minimum shake intensity
 
+    public GameObject explosion;
+
+
 
     void Start()
     {
@@ -33,6 +36,7 @@ public class explosionScript : MonoBehaviour
         {
             cameraShake.ShakeCamera(shakeIntensity, shakeTime);
             Debug.Log(shakeIntensity);
+            Instantiate(explosion, transform.position,Quaternion.identity);
             Destroy(this.gameObject);
 
         }
