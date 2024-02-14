@@ -16,6 +16,7 @@ public class explosionScript : MonoBehaviour
     [SerializeField] private float minShakeIntensity = 1f; // Minimum shake intensity
 
     public GameObject explosion;
+    public List<GameObject> explosions;
 
 
 
@@ -35,8 +36,10 @@ public class explosionScript : MonoBehaviour
         if (characterController.isGrounded)
         {
             cameraShake.ShakeCamera(shakeIntensity, shakeTime);
-            Debug.Log(shakeIntensity);
-            Instantiate(explosion, transform.position,Quaternion.identity);
+            //Debug.Log(shakeIntensity);
+            int randomIndex = Random.Range(0, explosions.Count);
+
+            Instantiate(explosions[randomIndex], transform.position,Quaternion.identity);
             Destroy(this.gameObject);
 
         }

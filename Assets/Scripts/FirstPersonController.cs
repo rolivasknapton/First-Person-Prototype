@@ -25,6 +25,7 @@ public class FirstPersonController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         missilespawnarea = GameObject.Find("missileSpawner").GetComponent<BoxCollider>();
         Cursor.lockState = CursorLockMode.Locked;
+        StartCoroutine(RepeatEvery4Seconds());
     }
 
     void Update()
@@ -63,12 +64,13 @@ public class FirstPersonController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             GameObject hitObject = hit.collider.gameObject;
-            Debug.Log("Clicked on: " + hitObject.name);
+            //Debug.Log("Clicked on: " + hitObject.name);
 
             // Perform actions based on the clicked object, for example:
             // hitObject.SendMessage("OnClick", SendMessageOptions.DontRequireReceiver);
         }
-        MissileManagerScript.instance.SpawnMissiles(missilespawnarea);
+        //MissileManagerScript.instance.SpawnMissiles(missilespawnarea);
+
     }
     void ApplyGravity()
     {
@@ -76,5 +78,34 @@ public class FirstPersonController : MonoBehaviour
         {
             characterController.Move(Vector3.down * gravity * Time.deltaTime);
         }
+    }
+    void DesiredMethod()
+    {
+        MissileManagerScript.instance.SpawnMissiles(missilespawnarea);
+        //Debug.Log("Executing Desired Method!");
+        
+        // Place your desired code here
+    }
+
+    // Coroutine to call DesiredMethod every 4 seconds
+    IEnumerator RepeatEvery4Seconds()
+    {
+        while (true)
+        {
+            DesiredMethod();
+            yield return new WaitForSeconds(3f);
+        }
+    }
+
+    // Start the coroutine when the script is enabled
+    void OnEnable()
+    {
+        //StartCoroutine(RepeatEvery4Seconds());
+    }
+
+    // Stop the coroutine when the script is disabled or destroyed
+    void OnDisable()
+    {
+        StopCoroutine(RepeatEvery4Seconds());
     }
 }   

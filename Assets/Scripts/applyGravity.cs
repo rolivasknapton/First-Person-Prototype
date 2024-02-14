@@ -6,7 +6,7 @@ public class applyGravity : MonoBehaviour
 {
     private CharacterController characterController;
     
-    private float gravity = 100;
+    private float gravity = 200;
     void Start()
     {
         characterController = this.GetComponent<CharacterController>();
