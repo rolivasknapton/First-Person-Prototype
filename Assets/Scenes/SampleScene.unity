@@ -1161,10 +1161,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1557153973448774036, guid: b6050ddf83982d94f8d715b4b8a417ca, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 244661032}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6050ddf83982d94f8d715b4b8a417ca, type: 3}
 --- !u!4 &58737776 stripped
 Transform:
@@ -1589,11 +1586,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 401438, guid: f07c5dd2e7eea7f428902de53a5fe107, type: 3}
   m_PrefabInstance: {fileID: 849913125}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &79298998 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1557153973448774036, guid: b6050ddf83982d94f8d715b4b8a417ca, type: 3}
-  m_PrefabInstance: {fileID: 58448445}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &86541697 stripped
 Transform:
@@ -3265,33 +3257,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4356189853238090115, guid: b6050ddf83982d94f8d715b4b8a417ca, type: 3}
   m_PrefabInstance: {fileID: 58448445}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &244661032
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79298998}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!4 &246562156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470920, guid: a22c9e7ef50fc764da43060141ad70cb, type: 3}
@@ -9429,7 +9394,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.62
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

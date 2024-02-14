@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class checkIfExplosionHitPlayer : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("explosion"))
+        if (other.gameObject.CompareTag("explosion"))
         {
             Debug.Log("Hit by explosion");
             // You can add more logic here if needed
