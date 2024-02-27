@@ -45,6 +45,7 @@ public class FirstPersonController : MonoBehaviour
         float verticalMovement = Input.GetAxis("Vertical");
 
         Vector3 moveDirection = (transform.forward * verticalMovement + transform.right * horizontalMovement).normalized;
+        
         characterController.Move(moveDirection * speed * Time.deltaTime);
 
         // Clicking
