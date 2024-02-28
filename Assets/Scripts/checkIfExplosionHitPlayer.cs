@@ -9,7 +9,7 @@ public class checkIfExplosionHitPlayer : MonoBehaviour
     private Image deathimage;
     private void Start()
     {
-        deathscreen = GameObject.Find("DeathScreen");
+        //deathscreen = GameObject.Find("DeathScreen");
         deathimage = deathscreen.GetComponent<Image>();
 
     }
@@ -19,7 +19,10 @@ public class checkIfExplosionHitPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("explosion"))
         {
             Debug.Log("Hit by explosion");
-            deathimage.enabled = true;
+
+            deathscreen.SetActive(true);
+            
+            //deathimage.enabled = true;
             // You can add more logic here if needed
         }
         else

@@ -19,7 +19,7 @@ public class StartButtonScript : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         player.GetComponent<FirstPersonController>().enabled = true;
-        Debug.Log("Object Clicked!");
+        //Debug.Log("Object Clicked!");
         Time.timeScale = 1f;
         Destroy(intro);
 
